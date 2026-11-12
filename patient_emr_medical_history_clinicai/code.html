@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"inverse-primary":"#93ccff","on-error-container":"#93000a","inverse-surface":"#283044","tertiary-fixed":"#ffdad7","on-secondary-container":"#006f66","background":"#faf8ff","surface-variant":"#dae2fd","error-container":"#ffdad6","on-error":"#ffffff","error":"#ba1a1a","on-secondary-fixed":"#00201d","on-primary-fixed":"#001d31","surface-container-low":"#f2f3ff","on-tertiary-fixed-variant":"#930013","surface":"#faf8ff","primary-container":"#007bb9","surface-container":"#eaedff","on-secondary-fixed-variant":"#005049","primary":"#006194","surface-dim":"#d2d9f4","surface-container-highest":"#dae2fd","primary-fixed-dim":"#93ccff","tertiary-container":"#da3437","inverse-on-surface":"#eef0ff","secondary-fixed":"#89f5e7","on-tertiary":"#ffffff","surface-bright":"#faf8ff","tertiary":"#b61722","tertiary-fixed-dim":"#ffb3ad","outline":"#707881","on-secondary":"#ffffff","surface-tint":"#006398","secondary":"#006a61","surface-container-lowest":"#ffffff","secondary-fixed-dim":"#6bd8cb","on-tertiary-fixed":"#410004","on-tertiary-container":"#fffbff","on-primary-fixed-variant":"#004b73","outline-variant":"#bfc7d2","surface-container-high":"#e2e7ff","on-primary":"#ffffff","on-background":"#131b2e","secondary-container":"#86f2e4","on-primary-container":"#fdfcff","on-surface":"#131b2e","primary-fixed":"#cce5ff","on-surface-variant":"#3f4850"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1rem","space-md":"1rem","margin":"1rem","gutter-tablet":"1.25rem","space-2xl":"3rem","margin-tablet":"1.5rem","gutter-desktop":"1.5rem","margin-desktop":"2rem","space-xs":"0.25rem","space-lg":"1.5rem","space-xl":"2rem","space-sm":"0.5rem"},"fontFamily":{"headline-xl":["Plus Jakarta Sans"],"title-lg":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-lg":["Inter"],"body-md-medium":["Inter"],"headline-lg":["Plus Jakarta Sans"],"label-md":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"body-lg-medium":["Inter"],"headline-xl-mobile":["Plus Jakarta Sans"],"label-sm":["Inter"]},"fontSize":{"headline-xl":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"title-lg":["18px",{"lineHeight":"26px","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"body-md-medium":["14px",{"lineHeight":"20px","fontWeight":"500"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-lg-medium":["16px",{"lineHeight":"24px","fontWeight":"500"}],"headline-xl-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"500"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex items-center justify-between px-margin-tablet"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[22px]">local_hospital</span></div><div class="flex flex-col"><span class="font-headline-md text-headline-md text-primary leading-tight">ClinicAI</span><span class="font-label-sm text-label-sm text-on-surface-variant">Intelligent Clinical Copilot</span></div></div><div class="hidden md:flex items-center gap-space-xs px-space-sm py-space-xs rounded-lg bg-surface-container-low text-on-surface"><span class="material-symbols-outlined text-secondary text-[18px]">domain</span><span class="font-body-md-medium text-body-md-medium">Shree Ram Clinic • OPD 3</span></div></div><div class="flex items-center gap-space-md"><div class="hidden lg:flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg bg-surface-container-low"><div class="w-2 h-2 rounded-full bg-secondary animate-pulse"></div><span class="font-label-md text-label-md text-secondary">EMR Connected • Real-time Sync</span></div><div class="flex items-center bg-surface-container-low p-space-xs rounded-lg gap-space-xs"><button class="px-space-sm py-space-xs rounded bg-surface-container-lowest font-label-md text-label-md text-primary shadow-[0_1px_4px_rgba(0,0,0,0.04)]">HI</button><button class="px-space-sm py-space-xs rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface">GARH</button><button class="px-space-sm py-space-xs rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface">EN</button></div><div class="hidden sm:flex flex-col items-end"><span class="font-label-lg text-label-lg text-on-surface">Dr. Ananya Sen, MD</span><span class="font-label-sm text-label-sm text-on-surface-variant">MCI-28491</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-24 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex flex-col justify-between py-space-md items-center"><nav class="flex flex-col items-center gap-space-sm w-full px-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-body-md-medium rounded-xl"><a class="flex flex-col items-center justify-center w-full py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="queue" href="#"><span class="material-symbols-outlined text-[24px]">queue</span><span class="font-label-sm text-label-sm mt-space-xs">Queue</span></a><a class="flex flex-col items-center justify-center w-full py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="consult" href="#"><span class="material-symbols-outlined text-[24px]">mic</span><span class="font-label-sm text-label-sm mt-space-xs">Consult</span></a><a aria-current="page" class="flex flex-col items-center justify-center w-full py-space-sm transition-colors bg-primary-container text-on-primary-container font-body-md-medium rounded-xl" data-path="history" href="#"><span class="material-symbols-outlined text-[24px]">folder_shared</span><span class="font-label-sm text-label-sm mt-space-xs">History</span></a><a class="flex flex-col items-center justify-center w-full py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="prescriptions" href="#"><span class="material-symbols-outlined text-[24px]">prescriptions</span><span class="font-label-sm text-label-sm mt-space-xs">Rx</span></a></nav><div class="flex flex-col items-center w-full px-space-xs"><a class="flex flex-col items-center justify-center w-full py-space-sm rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="analytics" href="#"><span class="material-symbols-outlined text-[24px]">analytics</span><span class="font-label-sm text-label-sm mt-space-xs">Analytics</span></a></div></aside><div class="pl-24"><main class="w-full pt-16 bg-surface min-h-screen px-margin-tablet"><div class="flex flex-col w-full pb-space-2xl">
+<!-- Patient Top Micro-Bar (Quick Identity Anchor) -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm mb-space-md flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<a class="w-10 h-10 rounded-lg bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</a>
+<div class="flex items-center gap-space-sm">
+<span class="font-headline-lg text-headline-lg text-on-surface">Medical Record Dossier</span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm tracking-wide">CONFIDENTIAL</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="h-10 px-space-md rounded-lg bg-surface-container-low hover:bg-surface-container text-primary font-label-lg text-label-lg flex items-center gap-space-xs transition-colors">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>ABHA Linked: Active</span>
+</button>
+<button class="h-10 px-space-md rounded-lg bg-primary-container text-on-primary-container hover:bg-primary font-label-lg text-label-lg flex items-center gap-space-xs transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Print Prescription</span>
+</button>
+</div>
+</div>
+<!-- Dual-Pane Clinical Grid: 30% Sidebar & 70% Interactive Timeline -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg w-full items-start">
+<!-- LEFT COLUMN (30% Patient Profile & Baselines) -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Primary Demographics Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="relative w-20 h-20 rounded-xl overflow-hidden bg-surface-container flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of Ramesh Sharma, a 54-year-old North Indian male with salt-and-pepper hair, calm resilient facial expression, soft directional clinical studio lighting, neutral slate blue background, photorealistic medical dossier style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXQaUKYjy7G7idT7NeV-Io1AfWzhRLoPeEe2aM-qsuGA-XzvtLzCHW4oQDvNhu03g0lpOlxeXXuDuLV46CpYYqPLuYB5X3M0JczfzmrPTrjN3fAKCG5QwkPWrPt9YRs9gIumI5JPsPFYi5U66wAEqLbNodB8IzAFhHJoaaE-mR78TxtiWBcWEanSTZKNJxWuK42q_--R4Sm3yMpf37MR2p3Ipv6AbSm24_Pcz9wSsc"/>
+<div class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-surface-container-lowest text-primary font-label-sm text-[10px] font-bold shadow-xs">
+              B+
+            </div>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between gap-space-xs">
+<h2 class="font-headline-md text-headline-md text-on-surface truncate">Ramesh Sharma</h2>
+<span class="px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">Active</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">54 y/o Male • DOB: 14 Aug 1970</p>
+<div class="mt-space-xs flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">engineering</span>
+<span class="truncate">Civil Contractor • Dehradun</span>
+</div>
+</div>
+</div>
+<!-- IDs Micro-Grid -->
+<div class="grid grid-cols-1 gap-space-xs bg-surface-container-low p-space-sm rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">UHID</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold tracking-wide">CLN-2024-8891</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">ABHA ID</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold tracking-wider">91-4820-2918-4912</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Contact</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">+91 98765 43210</span>
+</div>
+</div>
+<!-- CRITICAL ALERTS BLOCK: Strict Safety Envelope -->
+<div class="bg-error-container text-on-error-container rounded-lg p-space-md flex flex-col gap-space-xs shadow-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-error text-[22px]" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-label-lg text-label-lg font-bold tracking-tight text-error uppercase">Critical Medical Alert</span>
+</div>
+<p class="font-body-md-medium text-body-md-medium text-on-error-container leading-snug">
+            Severe Anaphylaxis reaction to <span class="font-bold underline decoration-error">PENICILLIN</span> &amp; Beta-lactams (2018 documented). House dust mites allergy.
+          </p>
+<div class="flex items-center gap-space-xs mt-space-xs text-error font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[15px]">block</span>
+<span>Contraindicated: Amoxicillin, Ampicillin, Piperacillin</span>
+</div>
+</div>
+<!-- Chronic Baselines & Lifestyle -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Diagnosed Baselines</span>
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-space-sm py-1 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Hypertension (Grade 1, managed)
+            </span>
+<span class="px-space-sm py-1 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              Non-Smoker
+            </span>
+<span class="px-space-sm py-1 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+              Occasional Alcohol
+            </span>
+</div>
+</div>
+<!-- Emergency Contact Card -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">contact_emergency</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Suresh Sharma (Son)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+91 94120 78219 • Kin</span>
+</div>
+</div>
+<button class="w-9 h-9 rounded-lg bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-primary transition-colors" title="Call Emergency Contact">
+<span class="material-symbols-outlined text-[18px]">call</span>
+</button>
+</div>
+<!-- Demographics Quick Action Buttons -->
+<div class="grid grid-cols-2 gap-space-sm pt-space-xs">
+<button class="h-11 px-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center justify-center gap-space-xs transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+<span>Edit Profile</span>
+</button>
+<button class="h-11 px-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md flex items-center justify-center gap-space-xs transition-colors">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+<span>Sync ABHA</span>
+</button>
+</div>
+</div>
+<!-- Vitals Trend Snapshot Card -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-title-lg text-title-lg text-on-surface">Vitals Baseline</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Last checked today</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs">
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">BP (mmHg)</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold mt-1">128/82</span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-0.5 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Normal
+            </span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pulse (BPM)</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold mt-1">76</span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-0.5 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">favorite</span> Regular
+            </span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SpO2 (%)</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold mt-1">98%</span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center gap-0.5 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">air</span> Room Air
+            </span>
+</div>
+</div>
+<!-- SVG Micro-Sparkline: Blood Pressure Trajectory -->
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-1">
+<div class="flex justify-between items-center text-on-surface-variant">
+<span class="font-label-sm text-label-sm">Systolic Trajectory (Last 4 Consults)</span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">Avg: 132</span>
+</div>
+<div class="w-full h-12 flex items-end">
+<svg class="w-full h-full text-primary" fill="none" preserveaspectratio="none" viewbox="0 0 280 44">
+<path d="M0,32 L90,26 L180,36 L270,18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle class="fill-surface-container-lowest" cx="0" cy="32" r="3.5" stroke="currentColor" stroke-width="2"></circle>
+<circle class="fill-surface-container-lowest" cx="90" cy="26" r="3.5" stroke="currentColor" stroke-width="2"></circle>
+<circle class="fill-surface-container-lowest" cx="180" cy="36" r="3.5" stroke="currentColor" stroke-width="2"></circle>
+<circle class="fill-primary" cx="270" cy="18" r="4.5" stroke="currentColor" stroke-width="2"></circle>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (70% Chronological EMR Visits Timeline) -->
+<div class="lg:col-span-8 flex flex-col gap-space-md">
+<!-- Timeline Filter Toolbar & Primary Actions -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1 sm:pb-0">
+<button class="px-space-md py-space-xs rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold transition-colors flex items-center gap-1 shadow-sm whitespace-nowrap">
+<span>All Visits</span>
+<span class="px-1.5 py-0.2 rounded-full bg-on-primary/20 text-on-primary text-[10px]">4</span>
+</button>
+<button class="px-space-md py-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium transition-colors whitespace-nowrap">
+              OPD Consults
+            </button>
+<button class="px-space-md py-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium transition-colors whitespace-nowrap">
+              Lab Reports (3)
+            </button>
+<button class="px-space-md py-space-xs rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md font-medium transition-colors whitespace-nowrap">
+              Prescriptions (4)
+            </button>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="h-10 px-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-space-xs transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span class="hidden sm:inline">Export Dossier</span>
+</button>
+<button class="h-10 px-space-md rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md font-semibold flex items-center gap-space-xs transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>New Note</span>
+</button>
+</div>
+</div>
+<!-- Search Bar with Live Filter Input -->
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-11 pl-10 pr-space-md rounded-lg bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Search clinical notes, prescribed medicines, ICD-10 codes, or lab metrics..." type="text"/>
+</div>
+</div>
+<!-- Chronological Timeline Stream -->
+<div class="flex flex-col gap-space-md relative">
+<!-- VISIT 1: Expanded Active Accordion (Most Recent - Today 24 Oct 2024) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-all duration-200">
+<!-- Accordion Header -->
+<div class="p-space-lg bg-surface-container-lowest flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer select-none" onclick="document.getElementById('visit-today-body').classList.toggle('hidden')">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary-container flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">stethoscope</span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface">OPD Encounter • Acute Bronchitis</span>
+<span class="px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">Today</span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">mic</span> Copilot Note
+                  </span>
+</div>
+<div class="flex flex-wrap items-center gap-space-md mt-1 text-on-surface-variant font-label-md text-label-md">
+<span>Attending: <strong>Dr. Ananya Sen, MD</strong> (OPD 3)</span>
+<span>•</span>
+<span>Chief: Dry hacking cough × 10d, evening fever</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end md:self-auto">
+<span class="font-label-md text-label-md text-secondary font-semibold">24 Oct 2024, 11:35 AM</span>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface transition-transform" id="visit-today-icon">
+<span class="material-symbols-outlined text-[20px]">keyboard_arrow_up</span>
+</button>
+</div>
+</div>
+<!-- Expanded Accordion Content: Real-time AI SOAP Notes Snapshot -->
+<div class="p-space-lg pt-0 flex flex-col gap-space-md" id="visit-today-body">
+<!-- Dialect & AI Copilot Note Attestation -->
+<div class="bg-surface-container-low p-space-sm rounded-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">record_voice_over</span>
+<span>Garhwali-Hindi dialect acoustic transcription parsed with 98.4% clinical entity accuracy.</span>
+</div>
+<span class="text-primary font-semibold">Physician Confirmed &amp; Signed</span>
+</div>
+<!-- Structured SOAP Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Subjective (S) -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Subjective (S)</span>
+<span class="material-symbols-outlined text-primary text-[18px]">chat_bubble_outline</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+                  Patient presents with dry, hacking persistent cough for 10 days, exacerbated at night causing nocturnal dyspnea and throat tickling sensation. Low-grade evening chills reported. Denies hemoptysis, chest pain, or purulent sputum. Known hypertensive, compliant with medication.
+                </p>
+</div>
+<!-- Objective (O) -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Objective (O)</span>
+<span class="material-symbols-outlined text-primary text-[18px]">monitor_heart</span>
+</div>
+<div class="flex flex-col gap-1 text-on-surface font-body-md text-body-md">
+<p><strong>Vitals:</strong> BP 128/82 mmHg, HR 76 bpm, Temp 98.6°F, RR 18/min, SpO2 98% room air.</p>
+<p><strong>Respiratory:</strong> Bilateral clear vesicular breath sounds. No wheezing, rhonchi, or crepitations heard in lower lobes.</p>
+<p><strong>ENT:</strong> Posterior pharyngeal wall mildly erythematous, no tonsillar exudates, uvula central.</p>
+</div>
+</div>
+<!-- Assessment (A) -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Assessment (A)</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">ICD-10: J20.9</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface">
+<span class="font-bold text-on-surface">1. Acute Bronchitis / Post-viral hyperresponsiveness:</span> Likely resolving post-URI airway reactivity without secondary parenchymal consolidation.
+                </div>
+<div class="font-body-md text-body-md text-on-surface">
+<span class="font-bold text-on-surface">2. Primary Essential Hypertension:</span> Well-controlled on monotherapy.
+                </div>
+</div>
+<!-- Plan (P) -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">Plan &amp; Management (P)</span>
+<span class="material-symbols-outlined text-primary text-[18px]">medical_services</span>
+</div>
+<ul class="flex flex-col gap-1 font-body-md text-body-md text-on-surface list-disc pl-space-md">
+<li>Symptomatic antitussive &amp; anti-allergic therapy (non-penicillin regimen).</li>
+<li>Steam inhalation twice daily; hydration &gt; 2.5L/day.</li>
+<li>Avoid cold ambient air exposure during early mornings.</li>
+<li>Review in OPD in 5 days if cough fails to subside or if purulent sputum develops.</li>
+</ul>
+</div>
+</div>
+<!-- Attached Prescriptions & Pharmacy Order Strip -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest text-primary flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[20px]">prescriptions</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Attached Prescription: Rx #CL-2024-1029</span>
+<span class="font-body-md text-body-md text-on-surface-variant">2 Medications • Levocetirizine 5mg + Montelukast 10mg (OD), Dextromethorphan Syr 10ml (TDS)</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="h-10 px-space-md rounded-lg bg-surface-container-lowest hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold flex items-center gap-space-xs transition-colors shadow-xs">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+<span>View Full Rx</span>
+</button>
+<button class="h-10 px-space-md rounded-lg bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md font-semibold flex items-center gap-space-xs transition-colors shadow-xs">
+<span class="material-symbols-outlined text-[18px]">send_to_mobile</span>
+<span>Send WhatsApp</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- VISIT 2: Collapsed Accordion (12 Jun 2024) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-all duration-200">
+<div class="p-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer select-none" onclick="document.getElementById('visit-2-body').classList.toggle('hidden')">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">clinical_notes</span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface">Seasonal Rhinitis &amp; Viral Episode</span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">Resolved</span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">lab_profile</span> Lab Attached
+                  </span>
+</div>
+<div class="flex flex-wrap items-center gap-space-md mt-1 text-on-surface-variant font-label-md text-label-md">
+<span>Attending: <strong>Dr. Rajesh Joshi</strong> (Internal Med)</span>
+<span>•</span>
+<span>Diagnosis: Acute viral rhinosinusitis</span>
+<span>•</span>
+<span>BP: 136/88 mmHg</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end md:self-auto">
+<span class="font-label-md text-label-md text-on-surface-variant">12 Jun 2024</span>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<!-- Hidden Expandable Detail Panel -->
+<div class="hidden p-space-lg pt-0 flex flex-col gap-space-md" id="visit-2-body">
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Clinical Summary &amp; Treatment</span>
+<p class="font-body-md text-body-md text-on-surface">
+                Patient presented with nasal congestion, watery rhinorrhea, and intermittent headache for 3 days. Afebrile on exam. Pharynx clear. Prescribed Tab Cetirizine 10mg OD x 5d, Tab Paracetamol 650mg SOS, Normal Saline nasal spray. Advised plenty of fluids.
+              </p>
+</div>
+<!-- Attached Lab File Attachment -->
+<div class="bg-surface-container p-space-md rounded-lg flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">description</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Complete Blood Count (CBC) - Hb 14.2 g/dL, TLC 7,800/mcL</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dr. Lal PathLabs • Normal differential leucocyte count</span>
+</div>
+</div>
+<button class="h-9 px-space-sm rounded-lg bg-surface-container-lowest hover:bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+<span>View PDF</span>
+</button>
+</div>
+</div>
+</div>
+<!-- VISIT 3: Collapsed Accordion (05 Jan 2024) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-all duration-200">
+<div class="p-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer select-none" onclick="document.getElementById('visit-3-body').classList.toggle('hidden')">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">vital_signs</span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface">Annual Routine Preventive Health Check</span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">Annual Review</span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">square</span> Metabolic Panel
+                  </span>
+</div>
+<div class="flex flex-wrap items-center gap-space-md mt-1 text-on-surface-variant font-label-md text-label-md">
+<span>Attending: <strong>Dr. Ananya Sen, MD</strong></span>
+<span>•</span>
+<span>Lipid Panel &amp; Fasting Blood Sugar</span>
+<span>•</span>
+<span>BP: 130/84 mmHg</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end md:self-auto">
+<span class="font-label-md text-label-md text-on-surface-variant">05 Jan 2024</span>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<!-- Hidden Expandable Detail Panel -->
+<div class="hidden p-space-lg pt-0 flex flex-col gap-space-md" id="visit-3-body">
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Annual Assessment Summary</span>
+<p class="font-body-md text-body-md text-on-surface">
+                Patient asymptomatic. Maintained moderate physical activity on site work. Fasting blood sugar 98 mg/dL (Normal). HbA1c 5.6%. Total cholesterol mildly borderline at 192 mg/dL with HDL 46 mg/dL, LDL 118 mg/dL. Advised dietary reduction in saturated fats and 30 minutes brisk walking. Telmisartan 40mg monotherapy continued.
+              </p>
+</div>
+<!-- Attached Lab File Attachment -->
+<div class="bg-surface-container p-space-md rounded-lg flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">lab_panel</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Comprehensive Lipid Panel &amp; Fasting Blood Sugar</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Shree Ram Pathology Unit • Total Chol 192 mg/dL • Triglycerides 148 mg/dL</span>
+</div>
+</div>
+<button class="h-9 px-space-sm rounded-lg bg-surface-container-lowest hover:bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">picture_as_pdf</span>
+<span>View Report</span>
+</button>
+</div>
+</div>
+</div>
+<!-- VISIT 4: Collapsed Accordion (14 Aug 2023) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden transition-all duration-200">
+<div class="p-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md cursor-pointer select-none" onclick="document.getElementById('visit-4-body').classList.toggle('hidden')">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">radiology</span>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface">Orthopedic Consultation • Left Knee Strain</span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">Specialist Review</span>
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">imagesearch_roller</span> X-Ray DICOM
+                  </span>
+</div>
+<div class="flex flex-wrap items-center gap-space-md mt-1 text-on-surface-variant font-label-md text-label-md">
+<span>Attending: <strong>Dr. Meenakshi Sundaram</strong> (Orthopedics)</span>
+<span>•</span>
+<span>Mild joint effusion, medial collateral ligament grade-1 sprain</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end md:self-auto">
+<span class="font-label-md text-label-md text-on-surface-variant">14 Aug 2023</span>
+<button class="w-9 h-9 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[20px]">keyboard_arrow_down</span>
+</button>
+</div>
+</div>
+<!-- Hidden Expandable Detail Panel with Imaging Thumbnail -->
+<div class="hidden p-space-lg pt-0 flex flex-col gap-space-md" id="visit-4-body">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md items-center">
+<div class="md:col-span-2 bg-surface-container-low p-space-md rounded-lg flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Orthopedic Assessment</span>
+<p class="font-body-md text-body-md text-on-surface">
+                  Twisting injury while climbing construction scaffolding. No locking or giving way. Mild tenderness along medial joint line. Drawer and Lachman tests negative. Advised neoprene hinged knee brace for 3 weeks, cold fomentation, and quadriceps isometric strengthening exercises. Avoid squatting.
+                </p>
+</div>
+<!-- Imaging Card -->
+<div class="relative rounded-lg overflow-hidden bg-surface-container-high h-28 flex flex-col justify-end p-space-sm group">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="High resolution orthopedic diagnostic digital radiograph X-ray of adult left knee joint anteroposterior and lateral view showing intact bony cortex without fractures, medical radiographic viewer display format" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-Gfu42PxCsplw2H-tFu7HwLkp5cV6v5_erW0ssl_TMmcIHnHK3WOz3lRCeekcTls62r7OBxtDvkD01SPo-NHievk0Rmu4dOoT-qWWkLaV9hQZGTMchmDd_HD2AhLYa53ZdcXU3F1eGB6BCnqnBMHAftDQyKhwzJH0ZU_Q83RSzKa5Gu9x81ZFL4hiH18gkZc9AA5NVXe3zEj5edRKPveFwVAWNo7i6KSqJZq-6yiu"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent"></div>
+<div class="relative z-10 flex items-center justify-between text-on-primary">
+<span class="font-label-sm text-label-sm font-semibold">Knee AP/Lat Scan</span>
+<span class="material-symbols-outlined text-[18px]">open_in_new</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Historical Record Bottom Pagination/Sync Info -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-sm text-on-surface-variant">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">cloud_done</span>
+<span>4 Encounters synchronized with National Health Claims &amp; ABDM Registry.</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm">
+<span>Viewing 1-4 of 4 total recorded OPD visits</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for visual feedback on accordion headers
+  document.querySelectorAll('[onclick^="document.getElementById"]').forEach(header => {
+    header.addEventListener('click', function() {
+      const icon = this.querySelector('.material-symbols-outlined:last-child');
+      if (icon) {
+        if (icon.innerText === 'keyboard_arrow_down') {
+          icon.innerText = 'keyboard_arrow_up';
+        } else if (icon.innerText === 'keyboard_arrow_up') {
+          icon.innerText = 'keyboard_arrow_down';
+        }
+      }
+    });
+  });
+</script></main></div></body></html>

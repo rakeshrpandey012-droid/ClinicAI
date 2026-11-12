@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>ClinicAI - Clinical Copilot</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;min-height:100%;margin:0;padding:0;}body{overscroll-behavior:none;background-color:#faf8ff;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-surface": "#131b2e", "surface-container": "#eaedff", "on-tertiary-container": "#fffbff", "background": "#faf8ff", "surface": "#faf8ff", "on-background": "#131b2e", "surface-variant": "#dae2fd", "on-tertiary-fixed-variant": "#930013", "on-primary-fixed": "#001d31", "primary-container": "#007bb9", "tertiary-fixed-dim": "#ffb3ad", "tertiary": "#b61722", "error": "#ba1a1a", "surface-bright": "#faf8ff", "surface-container-low": "#f2f3ff", "tertiary-container": "#da3437", "inverse-primary": "#93ccff", "primary-fixed": "#cce5ff", "on-secondary-fixed-variant": "#005049", "surface-dim": "#d2d9f4", "on-primary": "#ffffff", "secondary-fixed-dim": "#6bd8cb", "on-secondary-fixed": "#00201d", "on-secondary": "#ffffff", "secondary-fixed": "#89f5e7", "secondary-container": "#86f2e4", "surface-container-high": "#e2e7ff", "on-tertiary": "#ffffff", "on-secondary-container": "#006f66", "surface-container-lowest": "#ffffff", "tertiary-fixed": "#ffdad7", "on-error": "#ffffff", "inverse-on-surface": "#eef0ff", "secondary": "#006a61", "primary": "#006194", "on-error-container": "#93000a", "surface-tint": "#006398", "on-primary-container": "#fdfcff", "primary-fixed-dim": "#93ccff", "error-container": "#ffdad6", "outline-variant": "#bfc7d2", "surface-container-highest": "#dae2fd", "on-surface-variant": "#3f4850", "on-primary-fixed-variant": "#004b73", "on-tertiary-fixed": "#410004", "inverse-surface": "#283044", "outline": "#707881" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin-tablet": "1.5rem", "space-md": "1rem", "margin": "1rem", "space-sm": "0.5rem", "gutter": "1rem", "gutter-tablet": "1.25rem", "margin-desktop": "2rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "space-2xl": "3rem", "gutter-desktop": "1.5rem", "space-xl": "2rem" }, fontFamily: { "label-md": ["Inter"], "body-md-medium": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "label-lg": ["Inter"], "headline-xl": ["Plus Jakarta Sans"], "title-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "label-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-lg-medium": ["Inter"] }, fontSize: { "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "600" }], "body-md-medium": ["14px", { lineHeight: "20px", fontWeight: "500" }], "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-xl": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }], "title-lg": ["18px", { lineHeight: "26px", fontWeight: "600" }], "headline-xl-mobile": ["26px", { lineHeight: "34px", letterSpacing: "-0.01em", fontWeight: "700" }], "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.03em", fontWeight: "500" }], "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "body-lg-medium": ["16px", { lineHeight: "24px", fontWeight: "500" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-full"><header class="fixed top-0 inset-x-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-20 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><div class="w-11 h-11 rounded-lg bg-primary flex items-center justify-center text-on-primary shrink-0 shadow-sm"><span class="material-symbols-outlined text-[24px]">ecg_heart</span></div><div class="flex flex-col min-w-0"><div class="flex items-center gap-space-xs"><span class="font-title-lg text-title-lg text-on-surface font-bold tracking-tight truncate">ClinicAI</span><span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm uppercase tracking-wide">Pro OPD</span></div><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Shree Ram Clinic • OPD 3</span></div></div><div class="hidden md:flex items-center bg-surface-container-lowest px-space-md py-space-xs rounded-full shadow-[0_1px_6px_rgba(0,0,0,0.03)]"><div class="flex items-center gap-space-xs"><span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span><span class="font-label-md text-label-md text-on-surface font-semibold">Ramesh Sharma, 54M</span><span class="text-outline-variant">•</span><span class="font-body-md text-body-md text-on-surface-variant">BP: <strong class="font-body-md-medium text-body-md-medium text-on-surface">130/82</strong></span><span class="text-outline-variant">•</span><span class="font-body-md text-body-md text-on-surface-variant">SpO2: <strong class="font-body-md-medium text-body-md-medium text-secondary">98%</strong></span><span class="text-outline-variant">•</span><span class="font-body-md text-body-md text-on-surface-variant">HR: <strong class="font-body-md-medium text-body-md-medium text-on-surface">76</strong></span><span class="text-outline-variant">•</span><span class="font-body-md text-body-md text-on-surface-variant">Temp: <strong class="font-body-md-medium text-body-md-medium text-on-surface">98.4°F</strong></span></div></div><div class="flex items-center gap-space-sm shrink-0"><div class="hidden lg:flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container"><span class="material-symbols-outlined text-secondary text-[16px]">mic</span><span class="font-label-sm text-label-sm text-on-surface-variant">AI Copilot Ready</span></div><button class="min-h-[44px] px-space-sm py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container flex items-center gap-space-xs transition-colors"><span class="material-symbols-outlined text-primary text-[20px]">translate</span><span class="font-label-md text-label-md text-on-surface">हिन्दी / EN</span><span class="material-symbols-outlined text-on-surface-variant text-[18px]">expand_more</span></button><div class="flex items-center gap-space-xs pl-space-xs"><div class="hidden sm:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Dr. Ananya Sen</span><span class="font-label-sm text-label-sm text-secondary leading-tight">Senior Physician</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="flex flex-col relative w-full pt-20 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full pb-8 space-y-space-md">
+<!-- PATIENT CONTEXT & TRIAGE STRIP -->
+<section class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary font-headline-md text-headline-md shrink-0">
+          RS
+        </div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<h1 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight truncate">Ramesh Sharma</h1>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">54 y/o Male</span>
+<span class="px-space-xs py-0.5 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">UHID: CLN-2024-8891</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant truncate">
+<span class="font-body-md-medium text-body-md-medium text-on-surface">Chief Complaint:</span> Persistent dry cough × 10d, evening fever, throat irritation
+          </p>
+</div>
+</div>
+<!-- Allergy Tag -->
+<div class="flex items-center gap-space-xs px-space-md py-1.5 rounded-lg bg-error-container text-on-error-container shrink-0 self-start sm:self-center">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wide font-bold">Known Allergies</span>
+<span class="font-label-md text-label-md font-semibold">Penicillin (Severe), Dust</span>
+</div>
+</div>
+</div>
+<!-- Live Vitals Metric Bar -->
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-space-xs pt-space-xs">
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[20px]">speed</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">BP (mmHg)</span>
+<div class="flex items-baseline gap-1">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">130/82</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Normal</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-2 rounded-lg">
+<span class="material-symbols-outlined text-tertiary text-[20px]">favorite</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pulse Rate</span>
+<div class="flex items-baseline gap-1">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">78</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">bpm</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-2 rounded-lg">
+<span class="material-symbols-outlined text-secondary text-[20px]">air</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SpO2 Level</span>
+<div class="flex items-baseline gap-1">
+<span class="font-label-lg text-label-lg text-secondary font-bold">98%</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Room Air</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-2 rounded-lg">
+<span class="material-symbols-outlined text-primary text-[20px]">device_thermostat</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Temperature</span>
+<div class="flex items-baseline gap-1">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">98.6°F</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Afebrile</span>
+</div>
+</div>
+</div>
+<div class="col-span-2 sm:col-span-1 flex items-center gap-space-xs bg-surface-container-low px-space-sm py-2 rounded-lg">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">water_drop</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Blood Sugar (R)</span>
+<div class="flex items-baseline gap-1">
+<span class="font-label-lg text-label-lg text-on-surface font-bold">142</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">mg/dL</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MULTILINGUAL ENGINE TUNER & MODEL STATUS STRIP -->
+<section class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">translate</span>
+<span class="font-label-lg text-label-lg text-on-surface font-bold">Multilingual Speech Engine</span>
+<span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Auto-Detect ON</span>
+</div>
+<!-- Dialect Pills Selector -->
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="min-h-[44px] px-space-md py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+<span>हिन्दी + English (Bilingual)</span>
+</button>
+<button class="min-h-[44px] px-space-sm py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors">
+          गढ़वाली (Garhwali)
+        </button>
+<button class="min-h-[44px] px-space-sm py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors">
+          कुमाऊँनी (Kumaoni)
+        </button>
+<button class="min-h-[44px] px-space-sm py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors">
+          English Only
+        </button>
+</div>
+</div>
+<!-- Acoustic Telemetry -->
+<div class="flex items-center gap-space-md bg-surface-container-low px-space-md py-2 rounded-xl">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Model Engine</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Whisper-Indic v2.4</span>
+</div>
+</div>
+<div class="h-6 w-px bg-outline-variant"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Latency</span>
+<span class="font-label-md text-label-md text-secondary font-bold">180 ms</span>
+</div>
+<div class="h-6 w-px bg-outline-variant"></div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[18px]">noise_control_off</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">OPD Filter</span>
+</div>
+</div>
+</section>
+<!-- TWO-PANE WORKSPACE: LEFT TRANSCRIPTION (60%) & RIGHT CLINICAL SOAP (40%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md w-full items-start">
+<!-- LEFT COLUMN: LIVE RECORDING & TRANSCRIPT STREAM (7 of 12 cols = ~60%) -->
+<div class="lg:col-span-7 flex flex-col gap-space-md w-full">
+<!-- Hero Audio Consultation Controller -->
+<section class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-3 h-3 rounded-full bg-tertiary animate-ping"></span>
+<span class="font-label-lg text-label-lg text-tertiary font-bold tracking-tight">LIVE CONSULTATION IN PROGRESS</span>
+</div>
+<span class="font-title-lg text-title-lg text-on-surface font-bold bg-surface-container-low px-space-sm py-0.5 rounded-lg">03:42</span>
+</div>
+<!-- Recording Interactive Centerpiece -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md bg-surface-container-low p-space-md rounded-xl">
+<div class="flex items-center gap-space-md">
+<!-- Pulsing Record Tap Button -->
+<button aria-label="Pause or Resume Audio Recording" class="relative group w-16 h-16 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shadow-md transition-transform active:scale-95 shrink-0" id="micToggleBtn">
+<span class="material-symbols-outlined text-[32px]">mic</span>
+<span class="absolute -inset-1.5 rounded-full border-2 border-tertiary/40 animate-pulse"></span>
+</button>
+<div class="flex flex-col">
+<span class="font-title-lg text-title-lg text-on-surface font-bold leading-tight">Listening to OPD Ambience</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tap button to pause / lock audio buffer</span>
+<div class="flex items-center gap-1 text-secondary mt-1">
+<span class="material-symbols-outlined text-[16px]">mic_external_on</span>
+<span class="font-label-sm text-label-sm font-semibold">Tablet Mic Array • High Clarity Mode</span>
+</div>
+</div>
+</div>
+<!-- Live Acoustic Waveform SVG -->
+<div class="flex items-center gap-1.5 h-10 px-space-sm py-1 bg-surface-container-lowest rounded-lg shadow-inner">
+<span class="w-1.5 bg-secondary rounded-full h-4 animate-pulse"></span>
+<span class="w-1.5 bg-primary rounded-full h-7 animate-bounce"></span>
+<span class="w-1.5 bg-secondary rounded-full h-9 animate-pulse"></span>
+<span class="w-1.5 bg-primary rounded-full h-5 animate-bounce"></span>
+<span class="w-1.5 bg-secondary rounded-full h-8 animate-pulse"></span>
+<span class="w-1.5 bg-primary rounded-full h-3 animate-bounce"></span>
+<span class="w-1.5 bg-secondary rounded-full h-6 animate-pulse"></span>
+<span class="w-1.5 bg-primary rounded-full h-8 animate-bounce"></span>
+</div>
+</div>
+</section>
+<!-- Live Clinical Conversation Feed -->
+<section class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">forum</span>
+<h2 class="font-title-lg text-title-lg text-on-surface font-bold">Multilingual Transcript</h2>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Dialect: Indo-Aryan Mixed</span>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-surface-container text-on-surface-variant" title="Auto-scroll pinned">
+<span class="material-symbols-outlined text-[20px]">vertical_align_bottom</span>
+</button>
+</div>
+</div>
+<!-- Chat Stream -->
+<div class="flex flex-col space-y-space-md max-h-[560px] overflow-y-auto pr-1">
+<!-- Turn 1: Doctor -->
+<div class="flex flex-col items-start gap-1 w-full max-w-[90%]">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary font-bold">Dr. Ananya Sen</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">00:45</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Hindi/Eng</span>
+</div>
+<div class="p-space-sm bg-surface-container-low text-on-surface rounded-xl rounded-tl-none text-body-md font-body-md shadow-sm">
+<p>नमस्ते रमेश जी, बताइए क्या तकलीफ हो रही है आपको? (Namaste Ramesh ji, tell me what is troubling you?)</p>
+</div>
+</div>
+<!-- Turn 2: Patient with Dialect & Real-time Tagging -->
+<div class="flex flex-col items-end gap-1 w-full self-end max-w-[92%]">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary font-bold">Ramesh Sharma (Patient)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">01:10</span>
+<span class="px-1.5 py-0.2 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Garhwali/Hindi</span>
+</div>
+<div class="p-space-sm bg-primary-fixed/30 text-on-surface rounded-xl rounded-tr-none text-body-md font-body-md shadow-sm">
+<p class="leading-relaxed">
+                डाक्टर साब, दस दिन से छाती मा खुजली अर सूखी खांसी लग्यूं च। सांझ कु हलका ज्वर बी आंद।
+                <span class="block text-on-surface-variant text-body-md-medium italic mt-1 font-body-md">
+                  (Doctor, having dry cough and chest tickle for 10 days. Mild fever in the evening.)
+                </span>
+</p>
+<!-- Medical Tag Badges -->
+<div class="flex flex-wrap gap-1 mt-2">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-md bg-primary-container text-on-primary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">label</span> Symptom: Dry Cough (10d)
+                </span>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-md bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">label</span> Low-Grade Evening Pyrexia
+                </span>
+</div>
+</div>
+</div>
+<!-- Turn 3: Doctor -->
+<div class="flex flex-col items-start gap-1 w-full max-w-[90%]">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-primary font-bold">Dr. Ananya Sen</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">01:42</span>
+</div>
+<div class="p-space-sm bg-surface-container-low text-on-surface rounded-xl rounded-tl-none text-body-md font-body-md shadow-sm">
+<p>Does it worsen at night or after climbing stairs? बलगम भी आ रहा है?</p>
+</div>
+</div>
+<!-- Turn 4: Patient -->
+<div class="flex flex-col items-end gap-1 w-full self-end max-w-[92%]">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm text-secondary font-bold">Ramesh Sharma (Patient)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">02:15</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-label-sm text-label-sm">Hindi/Hinglish</span>
+</div>
+<div class="p-space-sm bg-primary-fixed/30 text-on-surface rounded-xl rounded-tr-none text-body-md font-body-md shadow-sm">
+<p class="leading-relaxed">
+                No phlegm doctor, just dry hacking. नींद टूट जाती है रात में। खांसते-खांसते पसलियों में दर्द होने लगता है।
+              </p>
+<!-- Medical Tag Badges -->
+<div class="flex flex-wrap gap-1 mt-2">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-md bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Negative: No Sputum/Phlegm
+                </span>
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-md bg-surface-container-high text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[13px]">bedtime</span> Nocturnal Awakening
+                </span>
+</div>
+</div>
+</div>
+<!-- Live Ambient Ingestion Bubble -->
+<div class="flex items-center gap-space-sm p-space-sm rounded-xl bg-surface-container-low text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary animate-spin text-[20px]">autorenew</span>
+<span class="font-label-md text-label-md animate-pulse">Acoustic parser streaming phonemes...</span>
+</div>
+</div>
+<!-- Transcript Actions Footer -->
+<div class="flex items-center justify-between pt-space-xs border-t border-surface-container flex-wrap gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<button class="min-h-[48px] px-space-sm py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-primary text-[18px]">add_comment</span>
+<span>Quick Note</span>
+</button>
+<button class="min-h-[48px] px-space-sm py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-tertiary text-[18px]">flag</span>
+<span>Flag Ambiguity</span>
+</button>
+</div>
+<button class="min-h-[48px] px-space-sm py-1.5 rounded-lg bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-primary text-[18px]">g_translate</span>
+<span>Translate All to EN</span>
+</button>
+</div>
+</section>
+</div>
+<!-- RIGHT COLUMN: AI STRUCTURED SOAP NOTE & PRESCRIPTION (5 of 12 cols = ~40%) -->
+<div class="lg:col-span-5 flex flex-col gap-space-md w-full">
+<!-- SOAP Summary Header Card -->
+<section class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between flex-wrap gap-1">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+<div>
+<h2 class="font-title-lg text-title-lg text-on-surface font-bold leading-tight">AI SOAP Note</h2>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Generated real-time • 96% confidence</span>
+</div>
+</div>
+<div class="flex items-center gap-1 px-space-xs py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>EMR Linked</span>
+</div>
+</div>
+<!-- Editable SOAP Cards -->
+<div class="flex flex-col gap-space-sm mt-1">
+<!-- Subjective -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">S — Subjective</span>
+<button class="text-on-surface-variant hover:text-primary p-1"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+              54M presents with 10-day history of persistent non-productive dry cough accompanied by low-grade evening fever and nocturnal awakenings. Denies dyspnea, hemoptysis, or pleuritic chest pain.
+            </p>
+</div>
+<!-- Objective -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">O — Objective</span>
+<button class="text-on-surface-variant hover:text-primary p-1"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+</div>
+<p class="font-body-md text-body-md text-on-surface">
+              Chest: Bilateral vesicular breath sounds, no rhonchi/crepitations. Pharynx: Mild erythematous posterior pharyngeal wall. Afebrile currently (98.6°F, SpO2 98%).
+            </p>
+</div>
+<!-- Assessment -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">A — Assessment &amp; Differential</span>
+<button class="text-on-surface-variant hover:text-primary p-1"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+</div>
+<ul class="font-body-md text-body-md text-on-surface list-disc pl-4 space-y-0.5">
+<li>Post-viral Bronchial Hyperresponsiveness / Acute Bronchitis</li>
+<li>R/O Allergic Airway Disease vs Upper Respiratory Infection (URTI)</li>
+</ul>
+</div>
+<!-- Plan -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-bold uppercase tracking-wider">P — Clinical Plan</span>
+<button class="text-on-surface-variant hover:text-primary p-1"><span class="material-symbols-outlined text-[16px]">edit</span></button>
+</div>
+<div class="font-body-md text-body-md text-on-surface flex flex-col gap-1">
+<span>• Rx: Levocetirizine 5mg + Montelukast 10mg (OD HS × 7 days)</span>
+<span>• Dextromethorphan Syrup (10ml TDS × 5 days)</span>
+<span>• Warm saline gargles &amp; steam inhalation BD</span>
+<span class="text-tertiary font-body-md-medium">• Advise Chest X-Ray PA view if cough persists beyond 7 days</span>
+</div>
+</div>
+</div>
+<!-- Allergy Guard Verification Badge -->
+<div class="p-space-sm rounded-xl bg-secondary-fixed/40 flex items-center gap-space-xs text-on-secondary-fixed">
+<span class="material-symbols-outlined text-secondary text-[22px]">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold">Safety Check Passed</span>
+<span class="font-label-sm text-label-sm">No cross-reactivity with patient's Penicillin allergy detected in proposed plan.</span>
+</div>
+</div>
+<!-- PRIMARY CALL-TO-ACTION BUTTONS -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<!-- Main Touch Target Rx Generator -->
+<button class="w-full min-h-[48px] rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-space-xs shadow-md transition-all active:scale-[0.99]">
+<span class="material-symbols-outlined text-[20px]">prescriptions</span>
+<span>Review &amp; Generate Prescription (Rx)</span>
+</button>
+<!-- Secondary Quick Actions Row -->
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="min-h-[48px] px-space-xs py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-primary text-[18px]">local_offer</span>
+<span class="truncate">ICD-10 (J20.9)</span>
+</button>
+<button class="min-h-[48px] px-space-xs py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md font-semibold flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-secondary text-[18px]">send_to_mobile</span>
+<span class="truncate">WhatsApp / SMS</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Quick Doctor Notes & Scratchpad -->
+<section class="w-full bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-bold uppercase tracking-wider">Physician Voice Scratchpad</span>
+<span class="font-label-sm text-label-sm text-secondary">Auto-Saved</span>
+</div>
+<textarea class="w-full p-space-sm bg-surface-container-low text-on-surface rounded-lg text-body-md font-body-md focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none" placeholder="Dictate or type private notes not shared on final patient Rx..." rows="2"></textarea>
+</section>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for consultation mic state
+  document.getElementById('micToggleBtn')?.addEventListener('click', function() {
+    const isPaused = this.dataset.paused === 'true';
+    if (isPaused) {
+      this.classList.remove('bg-on-surface-variant');
+      this.classList.add('bg-tertiary');
+      this.dataset.paused = 'false';
+      this.querySelector('.material-symbols-outlined').textContent = 'mic';
+    } else {
+      this.classList.remove('bg-tertiary');
+      this.classList.add('bg-on-surface-variant');
+      this.dataset.paused = 'true';
+      this.querySelector('.material-symbols-outlined').textContent = 'mic_off';
+    }
+  });
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-2px_10px_rgba(0,0,0,0.03)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 max-w-5xl mx-auto px-margin"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="patient-queue" href="#"><span class="material-symbols-outlined text-[22px]">format_list_bulleted</span><span class="font-label-sm text-label-sm">Queue</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] gap-0.5 transition-colors text-primary font-bold" data-path="consultation-workspace" href="#"><span class="material-symbols-outlined text-[22px]">clinical_notes</span><span class="font-label-sm text-label-sm">Consult</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="multilingual-transcript" href="#"><span class="material-symbols-outlined text-[22px]">hearing</span><span class="font-label-sm text-label-sm">Live Voice</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="prescription-rx" href="#"><span class="material-symbols-outlined text-[22px]">prescriptions</span><span class="font-label-sm text-label-sm">Rx &amp; Orders</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="doctor-profile" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm">Clinic Info</span></a></div></nav></body></html>
